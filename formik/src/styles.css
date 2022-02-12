@@ -26,6 +26,12 @@ textarea {
   /* margin-bottom: 20px; */
 }
 
+.radio{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
 label{
   text-transform: capitalize;
   /* text-align: center; */

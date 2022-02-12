@@ -13,6 +13,12 @@ const FormikContainer = () => {
     {key:'Option 3',value:'option3'}
   ]
 
+  const checkBoxOptions = [
+    {key:'Option 1',value:'cOption1'},
+    {key:'Option 2',value:'cOption2'},
+    {key:'Option 3',value:'cOption3'},
+  ]
+
   const radioOptions = [
     {key:'Option 1',value:'rOption1'},
     {key:'Option 2',value:'rOption2'},
@@ -25,7 +31,8 @@ const FormikContainer = () => {
     lName:'',
     comments:'',
     selecOption:'',
-    radioOption:''
+    radioOption:'',
+    checkBoxOption:[],
   }
   const validationSchema = Yup.object({
     email:Yup.string().required('Required').email('Invalid email format'),
@@ -34,6 +41,7 @@ const FormikContainer = () => {
     comments:Yup.string().required('Required'),
     selectOption:Yup.string().required('Required'),
     radioOption:Yup.string().required('Required'),
+    checkBoxOption:Yup.array().required('Required')
   })
   const onSubmit = (values) => {
     console.log(values);
@@ -49,7 +57,11 @@ const FormikContainer = () => {
           formik => (
             <Form>
           
-              <FormikControl control='input' type='text'label="First Name" name="fName" />
+              <FormikControl 
+                control='input' 
+                type='text'
+                label="First Name" 
+                name="fName" />
               <FormikControl control='input' type='text'label="Last Name" name="lName" />
               <FormikControl control='input' type='email' label="Email" name="email" />
               <FormikControl control='textarea' type='textarea' label='Comments' name='comments' />
@@ -64,6 +76,12 @@ const FormikContainer = () => {
                 label='Radio Topic'
                 name='radioOption'
                 options={radioOptions}
+              />
+              <FormikControl
+                control='checkBox'
+                label='CheckBox Topic'
+                name='checkBoxOption'
+                options={checkBoxOptions}
               />
               <button type='submit'>Submit</button>
             </Form>
