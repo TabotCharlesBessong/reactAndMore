@@ -1,4 +1,5 @@
 import { ErrorMessage, Field } from 'formik'
+import '../styles.css'
 import React from 'react'
 import TextError from './TextError'
 
