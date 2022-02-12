@@ -1,6 +1,6 @@
 
 import React from 'react'
-import { Formik , Form, Field, ErrorMessage } from 'formik'
+import { Formik , Form, Field, ErrorMessage, FieldArray } from 'formik'
 import * as Yup from 'yup'
 import TextError from './TextError'
 
@@ -9,7 +9,13 @@ const initialValues = {
   email: '',
   channel: '',
   comment:'',
-  address:''
+  address:'',
+  social:{
+    facebook:'',
+    twitter:''
+  },
+  phoneNumbers:['',''],
+  phNumbers: ['']
 }
 
 const onSubmit = values => {
@@ -92,6 +98,57 @@ function YoutubeForm () {
             }
           </Field>
         </div>
+
+        <div className="form-control">
+          <label htmlFor="facebook">Facebook</label>
+          <Field type='text' id='facebook' name='social.facebook' />
+        </div>
+
+        <div className="form-control">
+           <label htmlFor="twitter">twitter</label>
+           <Field type='text' id='twitter' name='social.twitter' />
+        </div>
+
+        <div className="form-control">
+          <label htmlFor="primaryPh">primary phone number</label>
+          <Field type='text' id='primaryPh' name='phoneNumbers[0]' />
+        </div>
+
+        <div className="form-control">
+          <label htmlFor="secondaryPh">secondary phone number</label>
+          <Field type='text' id='secondaryPh' name='phoneNumbers[1]' />
+      </div>
+
+      <div className="form-control">
+        <label htmlFor="">List of Phone Numbers</label>
+        <FieldArray name ='phNumbers' >
+          {
+            (fieldArrayProps)=>{
+             console.log(fieldArrayProps)
+             const {push,remove,form} = fieldArrayProps 
+             const {values} = form 
+             const {phNumbers} = values
+             return (
+               <div>
+                 {
+                   phNumbers.map((item,index)=> (
+                     <div key={index}>
+                       <Field name={`phNumbers[${index}]`} />
+                       {
+                         index > 0 &&  <button type='button' onClick={() => remove(index)} > - </button>
+                       }
+                       
+                       <button type='button' onClick={()=> push('')} > + </button>
+                     </div>
+                   ))
+                 }
+               </div>
+             )
+              
+            }
+          }
+        </FieldArray>
+      </div>
         <button type='submit'>Submit</button>
       </Form>
     </Formik>

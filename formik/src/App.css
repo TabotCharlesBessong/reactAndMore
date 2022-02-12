@@ -22,9 +22,13 @@ textarea {
   background-image: none;
   border: 1px solid #ccc;
   border-radius: 4px;
+  text-transform: capitalize;
   /* margin-bottom: 20px; */
 }
 
+label{
+  text-transform: capitalize;
+}
 .form-control {
   margin-bottom: 20px;
 }
