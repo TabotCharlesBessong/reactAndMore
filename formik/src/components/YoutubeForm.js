@@ -6,7 +6,9 @@ import * as Yup from 'yup'
 const initialValues = {
   name: '',
   email: '',
-  channel: ''
+  channel: '',
+  comment:'',
+  address:''
 }
 
 const onSubmit = values => {
@@ -34,7 +36,7 @@ function YoutubeForm () {
       <Form >
         <div className='form-control'>
           <label htmlFor='name'>Name</label>
-          <Field
+          <Field  placeholder='Your Name'
             type='text'  id='name'    name='name'
           />
          <ErrorMessage name='name' />
@@ -42,7 +44,7 @@ function YoutubeForm () {
   
         <div className='form-control'>
           <label htmlFor='email'>E-mail</label>
-          <Field
+          <Field placeholder='Your Email'
             type='email'      id='email'     name='email'
           />
         <ErrorMessage name='email' />
@@ -50,12 +52,36 @@ function YoutubeForm () {
   
         <div className='form-control'>
           <label htmlFor='channel'>Channel</label>
-          <Field
-            type='text'      id='channel'           name='channel'
+          <Field placeholder='Your Channel Name'
+            type='text' id='channel'   name='channel'
           />
         <ErrorMessage name='channel' />
         </div>
-  
+        
+        <div className="form-control">
+          <label htmlFor="comment">Comment</label>
+          <Field as='textarea' id='comment' name='comment' placeholder='Your Comment  here' />
+        </div>
+
+        <div className="form-control">
+          <label htmlFor="address">Address</label>
+          <Field  name='address' id='address' >
+            {
+              (props)=>{
+                const {filed,form,meta} = props
+                return <div className="form-control">
+                 <input type='text' id='address' 
+                 {...filed} />
+                {meta.touched && meta.error ? <div className="">
+                  {meta.error}
+                </div>
+                : null
+                 }
+                </div>
+              }
+            }
+          </Field>
+        </div>
         <button type='submit'>Submit</button>
       </Form>
     </Formik>
