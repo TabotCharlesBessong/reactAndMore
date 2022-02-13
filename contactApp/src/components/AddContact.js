@@ -58,13 +58,16 @@ const AddContact = () => {
         <div className="col-md-6 shadow mx-auto p-5">
            <form action="" className='' onSubmit={(e)=>handleSubmit(e)} >
              <div className="form-group my-2 ">
-               <input type="text" placeholder='Name' value={name} className='form-control' onChange={(e)=> setName(e.target.value)}  />
+               <input type="text" placeholder='Name' value={name} className='form-control' 
+               onChange={(e)=> setName(e.target.value)}  />
              </div>
              <div className="form-group my-2 ">
-               <input type="email" placeholder='Email Address' className='form-control' onChange={(e)=> setEmail(e.target.value)} value={email} />
+               <input type="email" placeholder='Email Address' className='form-control' 
+               onChange={(e)=> setEmail(e.target.value)} value={email} />
              </div>
              <div className="form-group my-2 ">
-               <input type="text" placeholder='Telephone' className='form-control' onChange={(e)=> setNumber(e.target.value)} value={number} />
+               <input type="text" placeholder='Telephone' className='form-control' 
+               onChange={(e)=> setNumber(e.target.value)} value={number} />
              </div>
              <div className="form-group my-2 ">
                <input  type="submit" value='Tenants' className='btn  btn-block btn-dark  ' />
