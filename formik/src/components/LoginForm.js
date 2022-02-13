@@ -3,6 +3,7 @@ import { Form, Formik } from 'formik'
 import React from 'react'
 import * as Yup  from 'yup'
 import FormikControl from './FormikControl'
+import '../styles.css'
 
 const LoginForm = () => {
   const initialValues = {
