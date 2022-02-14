@@ -7,6 +7,10 @@
 
 # testing
 /coverage
+/assets
+/assets
+/src/assets
+
 
 # production
 /build
