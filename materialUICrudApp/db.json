@@ -1,19 +1,26 @@
+
 {
-  "posts": [
+  "user":[
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
+      "id":1,
+      "name":"Charles",
+      "email":"charles@gmail.com",
+      "address":"Buea",
+      "contact":"12345"
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "id":2,
+      "name":"Bessong",
+      "email":"bessong@gmail.com",
+      "address":"Douala",
+      "contact":"67890"
+    },
+    {
+      "id":3,
+      "name":"Tabot",
+      "email":"tabot@gmail.com",
+      "address":"Limbe",
+      "contact":"620161833"
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }
