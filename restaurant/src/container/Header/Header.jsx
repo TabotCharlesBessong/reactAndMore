@@ -16,7 +16,7 @@ const Header = () => (
        <p className="p__opensans" style={{margin:'2rem 0'}} >
          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt autem quibusdam libero id quia accusamus!
        </p>
-       <button type='button' className='custom__button' ></button>
+       <button type='button' className='custom__button' >Read Menu</button>
     </div>
     <div className="app__wrapper_img">
        <img src={images.welcome} alt="header-img" />

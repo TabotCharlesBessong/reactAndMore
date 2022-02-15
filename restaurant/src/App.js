@@ -4,6 +4,7 @@ import React from 'react';
 import  Navbar  from './components/Navbar/Navbar';
 import './App.css';
 import Header from './container/Header/Header';
+import AboutUs from './container/About/AboutUs';
 
 const App = () => (
   <div>
@@ -11,6 +12,7 @@ const App = () => (
     <Navbar />
     {/* <Header /> */}
     <Header/>
+    <AboutUs />
     
   </div>
 );
