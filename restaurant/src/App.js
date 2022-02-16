@@ -8,6 +8,7 @@ import AboutUs from './container/About/AboutUs';
 import SpecialMenu from './container/SpecialMenu/SpecialMenu';
 import Chef from './container/Chef/Chef';
 import Intro from './container/Intro/Intro';
+import Laurels from './container/Laurels/Laurels';
 
 const App = () => (
   <div>
@@ -19,6 +20,7 @@ const App = () => (
     <SpecialMenu/>
     <Chef/>
     <Intro/>
+    <Laurels/>
     
   </div>
 );
