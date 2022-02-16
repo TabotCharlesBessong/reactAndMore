@@ -7,6 +7,7 @@ import Header from './container/Header/Header';
 import AboutUs from './container/About/AboutUs';
 import SpecialMenu from './container/SpecialMenu/SpecialMenu';
 import Chef from './container/Chef/Chef';
+import Intro from './container/Intro/Intro';
 
 const App = () => (
   <div>
@@ -17,6 +18,7 @@ const App = () => (
     <AboutUs />
     <SpecialMenu/>
     <Chef/>
+    <Intro/>
     
   </div>
 );
