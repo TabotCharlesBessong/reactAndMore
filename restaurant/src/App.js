@@ -9,18 +9,19 @@ import SpecialMenu from './container/SpecialMenu/SpecialMenu';
 import Chef from './container/Chef/Chef';
 import Intro from './container/Intro/Intro';
 import Laurels from './container/Laurels/Laurels';
+import Gallery from './container/Gallery/Gallery';
 
 const App = () => (
   <div>
   {/* <h1>Hello world</h1> */}
     <Navbar />
-    {/* <Header /> */}
     <Header/>
     <AboutUs />
     <SpecialMenu/>
     <Chef/>
     <Intro/>
     <Laurels/>
+    <Gallery/>
     
   </div>
 );
