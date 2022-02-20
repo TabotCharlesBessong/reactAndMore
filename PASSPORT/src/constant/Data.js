@@ -32,7 +32,7 @@ const  posts = [
     title:'You can easily find buyers for your homes',
     img:img4,
     desc:'Lorem ipsum dolor sit amet consectetur adipisicing elit. A commodi illum possimus ut sapiente reprehenderitvoluptate ',
-    longDesc:'asperiores, iure hic id beatae iste atque obcaecati Lorem ipsum dolor sit amet consectetur adipisicing elit. Acommodi illum possimus ut sapiente reprehenderit voluptate asperiores, iure hic id beatae iste atque obcaecati vero fugiat '
+    long:'asperiores, iure hic id beatae iste atque obcaecati Lorem ipsum dolor sit amet consectetur adipisicing elit. Acommodi illum possimus ut sapiente reprehenderit voluptate asperiores, iure hic id beatae iste atque obcaecati vero fugiat '
   },
   {
     id:5,
