@@ -8,8 +8,8 @@ const GOOGLE_CLIENT_ID =
   "28149128211-2bovbchm5cg143pe0asvmjk2vnvase1b.apps.googleusercontent.com";
 const GOOGLE_CLIENT_SECRET = "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";
 
-GITHUB_CLIENT_ID = "your id";
-GITHUB_CLIENT_SECRET = "your id";
+GITHUB_CLIENT_ID = "72ebb358e5dab8b2bc13";
+GITHUB_CLIENT_SECRET = "2e2674a2d21011d96edd83f972a12e6c432538e8";
 
 FACEBOOK_APP_ID = "your id";
 FACEBOOK_APP_SECRET = "your id";
