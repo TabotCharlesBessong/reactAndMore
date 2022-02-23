@@ -64,9 +64,21 @@ const FormikContainer = () => {
                 type='text'
                 label="First Name" 
                 name="fName" />
-              <FormikControl control='input' type='text'label="Last Name" name="lName" />
-              <FormikControl control='input' type='email' label="Email" name="email" />
-              <FormikControl control='textarea' type='textarea' label='Comments' name='comments' />
+              <FormikControl 
+                control='input' 
+                type='text'
+                label="Last Name" 
+                name="lName" />
+              <FormikControl 
+                control='input' 
+                type='email' 
+                label="Email" 
+                name="email" />
+              <FormikControl 
+                control='textarea' 
+                type='textarea' 
+                label='Comments' 
+                name='comments' />
               <FormikControl 
                 control='select'
                 label='Select a topic'

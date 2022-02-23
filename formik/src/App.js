@@ -10,16 +10,16 @@ function App() {
   return (
     <div className="App">
       {/* <OldYoutubeForm/> */}
-      {/* <YoutubeForm/> */}
-      <FormikContainer/>
-      <Grid container>
-        <Grid item sm={12} md={8} lg={6}>
-            <LoginForm/>   
-        </Grid>
-        <Grid item sm={12} md={8} lg={6}>
-             <RegistrationForm/>   
-         </Grid>
-      </Grid>
+      <YoutubeForm/>
+      {/* <FormikContainer/> */}
+      {/* <Grid container> */}
+        {/* <Grid item sm={12} md={8} lg={6}> */}
+            {/* <LoginForm/>    */}
+        {/* </Grid> */}
+        {/* <Grid item sm={12} md={8} lg={6}> */}
+             {/* <RegistrationForm/>    */}
+         {/* </Grid> */}
+      {/* </Grid> */}
     </div>
   );
 }
