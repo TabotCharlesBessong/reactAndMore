@@ -1,7 +1,7 @@
 
 import { Form, Formik } from 'formik'
 import React from 'react'
-import * as Yup from 'yup'
+// import * as Yup from 'yup'
 import FormikControl from './FormikControl'
 
 const FormikContainer = () => {
@@ -35,16 +35,16 @@ const FormikContainer = () => {
     checkBoxOption:[],
     birthDate:null,
   }
-  const validationSchema = Yup.object({
-    email:Yup.string().required('Required').email('Invalid email format'),
-    fName:Yup.string().required('Required'),
-    lName:Yup.string().required('Required'),
-    comments:Yup.string().required('Required'),
-    selectOption:Yup.string().required('Required'),
-    radioOption:Yup.string().required('Required'),
-    checkBoxOption:Yup.array().required('Required'),
-    birthDate:Yup.date().required('Required').nullable()
-  })
+  // const validationSchema = Yup.object({
+  //   email:Yup.string().required('Required').email('Invalid email format'),
+  //   fName:Yup.string().required('Required'),
+  //   lName:Yup.string().required('Required'),
+  //   comments:Yup.string().required('Required'),
+  //   selectOption:Yup.string().required('Required'),
+  //   radioOption:Yup.string().required('Required'),
+  //   checkBoxOption:Yup.array().required('Required'),
+  //   birthDate:Yup.date().required('Required').nullable()
+  // })
   const onSubmit = (values) => {
     console.log(values);
   }
