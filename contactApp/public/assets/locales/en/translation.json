@@ -1,0 +1,5 @@
+{
+    "label.welcomeLine" : "Welcome to React Redux Contact Application",
+"label.addContact": "Add Contact",
+"label.name" : "Name"
+}

@@ -4,9 +4,15 @@ import { useDispatch } from 'react-redux'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { toast } from 'react-toastify'
+import { useTranslation } from "react-i18next"
+
+
+
+
 
 const Home = () => {
 
+  const {t} = useTranslation()
   const dispatch = useDispatch()
 
   const deletContact = (id)=>{
@@ -14,12 +20,13 @@ const Home = () => {
     toast.success("Tenats successfully removed from Hostel")
   }
   const contacts = useSelector(state => state)
+  
   return (
     <div className="container">
       <div className="row">
         <div className="col-md-12 my-5 text-right">
           <Link to='add' className=' btn btn-outline-dark'>
-            Add contact
+            {t('label.addContact')}
           </Link>
         </div>
         <div className="col-md-10 mx-auto">
@@ -32,7 +39,7 @@ const Home = () => {
             <thead className="text-white bg-dark text-center">
               <tr>
                 <th  >#</th>
-                <th  >Name</th>
+                <th  >{t('label.name')}</th>
                 <th  >Email</th>
                 <th  >Number</th>
                 <th  >Action</th>
@@ -65,7 +72,7 @@ const Home = () => {
           )
           :
           (
-            <h1>Welcome to React Redux Contact Application</h1>
+            <h1>{t("label.welcomeLine")}</h1>
           )
         }  
         </div>
