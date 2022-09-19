@@ -12,9 +12,13 @@ import {
 } from "@material-ui/core";
 import {Delete,MoneyOff} from '@material-ui/icons'
 import {transactions} from '../../../constants/data'
+import {useContext} from 'react'
+// import {ExpenseTrackerContext} from '../../../context/context'
 
 const List = () => {
 	const classes = useStyles()
+	// const globalState = useContext(ExpenseTrackerContext)
+	// console.log(globalState)
 	return (
 		<MuiList dense={false} className={classes.list}>
 			{transactions.map((trans) => (
