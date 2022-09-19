@@ -11,13 +11,13 @@ import {
 	Avatar,
 } from "@material-ui/core";
 import {Delete,MoneyOff} from '@material-ui/icons'
-import {transactions} from '../../../constants/data'
+// import {transactions} from '../../../constants/data'
 import {useContext} from 'react'
-// import {ExpenseTrackerContext} from '../../../context/context'
+import {ExpenseTrackerContext} from '../../../context/context'
 
 const List = () => {
 	const classes = useStyles()
-	// const globalState = useContext(ExpenseTrackerContext)
+	const {deleteTransaction , transactions} = useContext(ExpenseTrackerContext)
 	// console.log(globalState)
 	return (
 		<MuiList dense={false} className={classes.list}>
@@ -42,7 +42,7 @@ const List = () => {
 						/>
 
 						<ListItemSecondaryAction>
-							<IconButton edge="end" aria-label="delete">
+							<IconButton onClick={() => deleteTransaction(trans.id)} edge="end" aria-label="delete">
 								<Delete />
 							</IconButton>
 						</ListItemSecondaryAction>

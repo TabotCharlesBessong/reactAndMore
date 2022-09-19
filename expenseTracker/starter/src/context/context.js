@@ -24,6 +24,8 @@ export const Provider = ({ children }) => {
 		0
 	);
 
+	// console.log(transactions)
+
 	return (
 		<ExpenseTrackerContext.Provider
 			value={{
