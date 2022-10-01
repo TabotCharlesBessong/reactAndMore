@@ -13,7 +13,7 @@ const Details = ({title}) => {
 			<CardHeader title={title} />
 			<CardContent>
 				<Typography variant="h5">${total}</Typography>
-				{/* <Doughnut data={chartData} /> */}
+				<Doughnut data={chartData} />
 			</CardContent>
 		</Card>
 	);
