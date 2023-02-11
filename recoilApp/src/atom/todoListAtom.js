@@ -1,4 +1,5 @@
 
+import { useRecoilValue } from 'recoil';
 import {atom,selector} from 'recoil'
 
 // declaring a state
@@ -45,5 +46,17 @@ export const todoListStatsState = selector({
 			totalUncompletedNum,
 			percentCompleted,
 		};
+	},
+});
+
+const currentUserIDState = atom({
+	key: "CurrentUserID",
+	default: 1,
+});
+
+export const currentUserNameState = selector({
+	key: "CurrentUserName",
+	get: ({ get }) => {
+		return tableOfUsers[get(currentUserIDState)].name;
 	},
 });
