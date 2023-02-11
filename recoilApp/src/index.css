@@ -71,7 +71,7 @@ button:focus-visible {
 .todo-creator{
   display: flex;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
   margin: auto;
   padding: 4rem;
 }
