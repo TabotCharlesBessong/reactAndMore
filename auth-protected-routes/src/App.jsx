@@ -1,11 +1,18 @@
 
+import { BrowserRouter as Router,Route,Routes } from "react-router-dom"
+import { Header } from "./components"
+import UseRoutes from "./utils/UseRoutes"
 
 function App() {
 
   return (
-    <h1 className='text-5xl text-orange-600 text-center underline' >
-      Hello my wolrd
-    </h1>
+    <Router>
+      <Header/>
+      <Routes>
+
+      </Routes>
+      <UseRoutes/>
+    </Router>
   )
 }
 
