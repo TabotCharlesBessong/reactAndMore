@@ -1,19 +1,9 @@
-
-import { BrowserRouter as Router,Route,Routes } from "react-router-dom"
-import { Header } from "./components"
-import UseRoutes from "./utils/UseRoutes"
+import "./App.css";
+import { useRoutes, Outlet } from "react-router-dom";
+import Route from "./routes/route";
 
 function App() {
-
-  return (
-    <Router>
-      <Header/>
-      <Routes>
-
-      </Routes>
-      <UseRoutes/>
-    </Router>
-  )
+	return useRoutes(Route);
 }
 
-export default App
+export default App;
