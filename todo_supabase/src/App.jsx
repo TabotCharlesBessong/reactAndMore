@@ -1,35 +1,172 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState, useEffect } from "react";
+import { supabase } from "./createClient";
+import "./App.css";
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = () => {
+  const [users, setUsers] = useState([]);
+
+  const [user, setUser] = useState({
+    name: "",
+    age: "",
+  });
+
+  const [user2, setUser2] = useState({
+    id: "",
+    name: "",
+    age: "",
+  });
+
+  console.log(user2);
+
+  useEffect(() => {
+    fetchUsers();
+  }, []);
+
+  async function fetchUsers() {
+    const { data } = await supabase.from("users").select("*");
+    setUsers(data);
+  }
+
+  function handleChange(event) {
+    setUser((prevFormData) => {
+      return {
+        ...prevFormData,
+        [event.target.name]: event.target.value,
+      };
+    });
+  }
+
+  function handleChange2(event) {
+    setUser2((prevFormData) => {
+      return {
+        ...prevFormData,
+        [event.target.name]: event.target.value,
+      };
+    });
+  }
+
+  async function createUser() {
+    await supabase.from("users").insert({ name: user.name, age: user.age });
+
+    fetchUsers();
+  }
+
+  async function deleteUser(userId) {
+    const { data, error } = await supabase
+      .from("users")
+      .delete()
+      .eq("id", userId);
+
+    fetchUsers();
+
+    if (error) {
+      console.log(error);
+    }
+
+    if (data) {
+      console.log(data);
+    }
+  }
+
+  function displayUser(userId) {
+    users.map((user) => {
+      if (user.id == userId) {
+        setUser2({ id: user.id, name: user.name, age: user.age });
+      }
+    });
+  }
+
+  async function updateUser(userId) {
+    const { data, error } = await supabase
+      .from("users")
+      .update({ id: user2.id, name: user2.name, age: user2.age })
+      .eq("id", userId);
+
+    fetchUsers();
+
+    if (error) {
+      console.log(error);
+    }
+
+    if (data) {
+      console.log(data);
+    }
+  }
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <div>
+      {/* FORM 1 */}
+      <form onSubmit={createUser}>
+        <input
+          type="text"
+          placeholder="Name"
+          name="name"
+          onChange={handleChange}
+        />
+        <input
+          type="number"
+          placeholder="Age"
+          name="age"
+          onChange={handleChange}
+        />
+        <button type="submit">Create</button>
+      </form>
 
-export default App
+      {/* FORM 2 */}
+      <form onSubmit={() => updateUser(user2.id)}>
+        <input
+          type="text"
+          name="name"
+          onChange={handleChange2}
+          defaultValue={user2.name}
+        />
+        <input
+          type="number"
+          name="age"
+          onChange={handleChange2}
+          defaultValue={user2.age}
+        />
+        <button type="submit">Save Changes</button>
+      </form>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          {users.map((user) => (
+            <tr key={user.id}>
+              <td>{user.id}</td>
+              <td>{user.name}</td>
+              <td>{user.age}</td>
+              <td>
+                <button
+                  onClick={() => {
+                    deleteUser(user.id);
+                  }}
+                >
+                  Delete
+                </button>
+                <button
+                  onClick={() => {
+                    displayUser(user.id);
+                  }}
+                >
+                  Edit
+                </button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+};
+
+export default App;
