@@ -25,7 +25,12 @@ const App = () => {
   async function fetchUsers() {
     const { data } = await supabase.from("users").select("*");
     setUsers(data);
+    console.log(data)
   }
+
+  useEffect(() => {
+    fetchUsers()
+  },[])
 
   function handleChange(event) {
     setUser((prevFormData) => {
@@ -96,7 +101,7 @@ const App = () => {
   return (
     <div>
       {/* FORM 1 */}
-      <form onSubmit={createUser}>
+      <form onSubmit={() => createUser()}>
         <input
           type="text"
           placeholder="Name"
